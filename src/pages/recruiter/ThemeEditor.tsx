@@ -149,7 +149,7 @@ export default function ThemeEditor() {
         </div>
       )}
 
-      <div className="space-y-6 bg-white p-6 rounded-lg shadow">
+      <div className="space-y-6 bg-blue-50 p-6 rounded-lg shadow">
         <div>
           <label className="font-medium block mb-2">Company Logo</label>
           {theme?.logo_url && (

@@ -122,7 +122,7 @@ export default function Dashboard() {
             <Link
               key={item.title}
               to={item.link}
-              className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition-shadow"
+              className="bg-orange-50 border border-orange-200 rounded-xl p-6 shadowtransition-shadow"
             >
               <div className="flex items-start">
                 <span className="text-4xl mr-4">{item.icon}</span>

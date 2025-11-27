@@ -31,10 +31,13 @@ const AppContent: React.FC = () => {
           <nav className="flex space-x-4 items-center">
             {isAuthenticated ? (
               <>
-                <span className="text-sm text-gray-600">{company?.name}</span>
+                <span className="hidden lg:block text-sm text-gray-600">
+                  {company?.name}
+                </span>
+
                 <Link
                   to="/dashboard"
-                  className="text-gray-700 hover:text-indigo-600"
+                  className="text-gray-700 hover:text-indigo-600 hidden lg:block "
                 >
                   Dashboard
                 </Link>

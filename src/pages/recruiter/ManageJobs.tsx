@@ -135,7 +135,10 @@ export default function ManageJobs() {
 
       <div className="space-y-4 mb-6">
         {jobs.map((job) => (
-          <div key={job.id} className="bg-white border rounded-lg p-4 shadow">
+          <div
+            key={job.id}
+            className="bg-green-50 border rounded-lg p-4 shadow"
+          >
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <h3 className="font-semibold text-lg">{job.title}</h3>
@@ -163,23 +166,34 @@ export default function ManageJobs() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => handleTogglePublish(job.id, !job.is_published)}
-                  className={`px-3 py-1 rounded text-sm ${
-                    job.is_published
-                      ? "bg-red-100 text-red-800 hover:bg-red-200"
-                      : "bg-green-100 text-green-800 hover:bg-green-200"
-                  }`}
+                  className="flex items-center gap-2"
                 >
-                  {job.is_published ? "Unpublish" : "Publish"}
+                  {/* Label */}
+                  <span className="text-sm font-medium">
+                    {job.is_published ? "Unpublish" : "Publish"}
+                  </span>
+
+                  {/* Switch */}
+                  <div
+                    className={`w-10 h-5 flex items-center rounded-full p-1 cursor-pointer transition-colors
+      ${job.is_published ? "bg-green-500" : "bg-gray-300"}`}
+                  >
+                    <div
+                      className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform
+      ${job.is_published ? "translate-x-5" : "translate-x-0"}`}
+                    ></div>
+                  </div>
                 </button>
+
                 <button
                   onClick={() => handleEdit(job)}
-                  className="text-indigo-600 hover:text-indigo-800 px-3 py-1 rounded hover:bg-indigo-50"
+                  className="text-indigo-600 hover:text-indigo-800 px-3 py-1 rounded bg-indigo-100  flex items-center gap-1"
                 >
-                  Edit
+                  ✏️ Edit
                 </button>
                 <button
                   onClick={() => handleDelete(job.id)}
-                  className="text-red-600 hover:text-red-800 px-3 py-1 rounded hover:bg-red-50"
+                  className="text-red-600 hover:text-red-800 px-3 py-1 rounded  bg-red-100 "
                 >
                   Delete
                 </button>
