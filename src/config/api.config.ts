@@ -1,7 +1,7 @@
 // API Configuration
 export const API_CONFIG = {
-  BASE_URL:
-    "https://whitecaroot-backend.onrender.com/" /* || "http://localhost:5000" */,
+  BASE_URL: "https://whitecaroot-backend.onrender.com/",
+  // BASE_URL: "http://localhost:5000",
   TIMEOUT: 30000,
 };
 

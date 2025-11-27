@@ -51,7 +51,12 @@ export default function ThemeEditor() {
 
     try {
       const result = await companyService.uploadImage(company.slug, file);
-      const fullUrl = `${API_CONFIG.BASE_URL}${result.url}`;
+      const cleanUrl = result.url.startsWith("/")
+        ? result.url.substring(1)
+        : result.url;
+
+      const fullUrl = `${API_CONFIG.BASE_URL}${cleanUrl}`;
+      console.log("fullurl::", fullUrl);
 
       // Update theme with new URL
       await companyService.updateTheme(company.slug, {
