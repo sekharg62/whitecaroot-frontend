@@ -137,7 +137,11 @@ export default function ManageJobs() {
         {jobs.map((job) => (
           <div
             key={job.id}
-            className="bg-green-50 border rounded-lg p-4 shadow"
+            className={`${
+              job.is_published
+                ? "bg-green-100 text-green-800"
+                : "bg-gray-100 text-gray-800"
+            } border rounded-lg p-4 shadow`}
           >
             <div className="flex flex-wrap items-center justify-between">
               <div className="flex-1">
@@ -152,8 +156,8 @@ export default function ManageJobs() {
                   <span
                     className={`px-2 py-1 rounded text-sm ${
                       job.is_published
-                        ? "bg-green-100 text-green-800"
-                        : "bg-gray-100 text-gray-800"
+                        ? "bg-green-200 text-green-800"
+                        : "bg-gray-300 text-gray-800"
                     }`}
                   >
                     {job.is_published ? "Published" : "Draft"}
