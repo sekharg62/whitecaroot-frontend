@@ -124,7 +124,7 @@ export default function ManageJobs() {
   return (
     <div className="p-6 max-w-6xl mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-semibold">Manage Jobs</h2>
+        <h2 className="text-xl font-semibold">Manage Jobs</h2>
         <button
           onClick={() => navigate("/dashboard")}
           className="text-gray-600 hover:text-gray-800"
@@ -139,7 +139,7 @@ export default function ManageJobs() {
             key={job.id}
             className="bg-green-50 border rounded-lg p-4 shadow"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap items-center justify-between">
               <div className="flex-1">
                 <h3 className="font-semibold text-lg">{job.title}</h3>
                 <p className="text-gray-600">
@@ -159,7 +159,11 @@ export default function ManageJobs() {
                     {job.is_published ? "Published" : "Draft"}
                   </span>
                   <span className="text-sm text-gray-500">
-                    Created: {new Date(job.created_at).toLocaleDateString()}
+                    Created:{" "}
+                    <span className="text-black">
+                      {" "}
+                      {new Date(job.created_at).toLocaleDateString()}
+                    </span>
                   </span>
                 </div>
               </div>
