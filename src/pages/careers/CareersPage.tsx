@@ -98,6 +98,7 @@ export default function CareersPage() {
   }
 
   const primaryColor = company.primary_color || "#4F46E5";
+  const secondaryColor = company.secondary_color || "#4F46E5";
 
   // Get unique locations and job types for filters
   const locations = [...new Set(jobs.map((j) => j.location).filter(Boolean))];
@@ -193,12 +194,15 @@ export default function CareersPage() {
                   className="bg-white rounded-lg shadow p-6"
                 >
                   <h2
-                    className="text-2xl font-bold mb-3"
+                    className="text-2xl text-center font-bold mb-3"
                     style={{ color: primaryColor }}
                   >
                     {section.title}
                   </h2>
-                  <p className="text-gray-700 whitespace-pre-wrap">
+                  <p
+                    className=" whitespace-pre-wrap text-center"
+                    style={{ color: secondaryColor }}
+                  >
                     {section.content}
                   </p>
                 </div>
@@ -227,6 +231,7 @@ export default function CareersPage() {
                 onChange={(e) => setLocationFilter(e.target.value)}
                 className="border rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2"
                 aria-label="Filter by location"
+                style={{ "--tw-ring-color": secondaryColor } as any}
               >
                 <option value="">All Locations</option>
                 {locations.map((loc) => (
@@ -241,6 +246,7 @@ export default function CareersPage() {
                 onChange={(e) => setTypeFilter(e.target.value)}
                 className="border rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2"
                 aria-label="Filter by job type"
+                style={{ "--tw-ring-color": secondaryColor } as any}
               >
                 <option value="">All Job Types</option>
                 {jobTypes.map((type) => (
