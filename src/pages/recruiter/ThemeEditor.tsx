@@ -128,10 +128,12 @@ export default function ThemeEditor() {
   return (
     <div className="p-6 max-w-3xl mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-semibold">Theme Settings</h2>
+        <h2 className="text-xl font-semibold whitespace-nowrap">
+          Theme Settings
+        </h2>
         <button
           onClick={() => navigate("/dashboard")}
-          className="text-gray-600 hover:text-gray-800"
+          className="text-gray-600 text-sm hover:text-gray-800 whitespace-nowrap"
         >
           ← Back to Dashboard
         </button>
