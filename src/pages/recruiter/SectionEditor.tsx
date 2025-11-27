@@ -51,7 +51,7 @@ function SortableSection({
     <div
       ref={setNodeRef}
       style={style}
-      className={`bg-white border rounded-lg p-4 flex items-center justify-between shadow ${
+      className={`bg-white border rounded-lg p-4 flex flex-wrap items-center justify-between shadow ${
         !section.is_visible ? "opacity-50" : ""
       }`}
     >
@@ -81,7 +81,7 @@ function SortableSection({
           onClick={() => onEdit(section)}
           className="text-indigo-600 hover:text-indigo-800 px-3 py-1 rounded bg-indigo-100  flex items-center gap-1"
         >
-          ✏️ Edit
+          Edit
         </button>
 
         <button
@@ -228,7 +228,7 @@ export default function SectionEditor() {
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-semibold">Manage Page Sections</h2>
+        <h2 className="text-xl font-semibold">Manage Page Sections</h2>
         <button
           onClick={() => navigate("/dashboard")}
           className="text-gray-600 hover:text-gray-800"
